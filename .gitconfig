@@ -10,7 +10,7 @@ pep8-last = !git diff HEAD~1 | flake8 --diff
 ru = remote update
 st = status
 plog = log --pretty=format:\"%Cgreen %h %Creset| %Cblue%G?%Creset | %ar | %aN | %Cblue%s\"
-hist = log --pretty=format:\"%Cred%h%Creset | %ad | %Cblue%aN%Creset %Cred%d%Creset %n %s %n \" --graph --date=local
+hist = log --graph --date=local --all --pretty=format:\"%x09%s %Cred%d%Creset%n %x09%Cred%h%Creset | %ad | %Cblue%aN%Creset %n\"
 
 [color "status"]
 added = yellow
