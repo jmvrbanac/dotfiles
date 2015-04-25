@@ -15,6 +15,7 @@ Plugin 'wting/rust.vim'
 Plugin 'bufexplorer.zip'
 Plugin 'nvie/vim-rst-tables'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'sickill/vim-monokai'
 
 Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
@@ -38,7 +39,7 @@ set hlsearch
 set expandtab tabstop=4 shiftwidth=4
 set colorcolumn=80
 set number
-colorscheme Monokai-chris
+colorscheme monokai
 set laststatus=2
 set nowrap
 set scrolloff=5
@@ -59,7 +60,7 @@ let g:nerdtree_tabs_open_on_gui_startup=0
 let g:nerdtree_tabs_open_on_new_tab=0
 
 let g:indent_guides_exclude_filetypes = ['nerdtree']
-let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_enable_on_vim_startup = 0
 
 " Syntastic Settings
 let g:syntastic_enable_signs=1
@@ -73,6 +74,7 @@ let g:syntastic_python_flake8_args=''
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 
 let g:session_autoload = 'no'
+let g:session_autosave = 'no'
 
 " Snippets
 nnoremap <leader>pdb oimport pdb; pdb.set_trace()<Esc>
