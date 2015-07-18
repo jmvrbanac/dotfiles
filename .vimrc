@@ -33,6 +33,8 @@ autocmd FileType rst setlocal spell spelllang=en_us
 
 set guifont:Inconsolata\ for\ Powerline\ Medium\ 14
 
+" Hooking up vim clipboard into the system clipboard
+set clipboard=unnamedplus
 set synmaxcol=500
 set incsearch
 set hlsearch
@@ -50,11 +52,8 @@ autocmd BufWritePre * :%s/\s\+$//e "remove trailing spaces on saves
 set backupdir=~/.vim-tmp
 set directory=~/.vim-tmp
 
-" Hooking up vim clipboard into the system clipboard
-set clipboard=unnamedplus
-
 " Nerd Tree Settings
-let NERDTreeIgnore=['.pyc$', '\~$', '__pycache__$', '.git$', '.*\.egg-info$']
+let NERDTreeIgnore=['.pyc$', '\~$', '__pycache__$', '.git$', '.*\.egg.*$', '.tox']
 let NERDTreeShowHidden=1
 let g:nerdtree_tabs_open_on_gui_startup=0
 let g:nerdtree_tabs_open_on_new_tab=0
