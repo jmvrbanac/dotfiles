@@ -11,6 +11,7 @@ ru = remote update
 st = status
 plog = log --pretty=format:\"%Cgreen %h %Creset| %Cblue%G?%Creset | %ar | %aN | %Cblue%s\"
 hist = log --graph --date=local --all --pretty=format:\"%x09%s %Cred%d%Creset%n %x09%Cred%h%Creset | %ad | %Cblue%aN%Creset %n\"
+delete-remote-branch = push --delete
 
 [color "status"]
 added = yellow
