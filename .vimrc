@@ -13,7 +13,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'wting/rust.vim'
 Plugin 'bufexplorer.zip'
-Plugin 'nvie/vim-rst-tables'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'sickill/vim-monokai'
 
@@ -41,6 +40,7 @@ set hlsearch
 set expandtab tabstop=4 shiftwidth=4
 set colorcolumn=80
 set number
+set title
 colorscheme monokai
 set laststatus=2
 set nowrap
@@ -53,7 +53,7 @@ set backupdir=~/.vim-tmp
 set directory=~/.vim-tmp
 
 " Nerd Tree Settings
-let NERDTreeIgnore=['.pyc$', '\~$', '__pycache__$', '.git$', '.*\.egg.*$', '.tox']
+let NERDTreeIgnore=['.pyc$', '\~$', '__pycache__$', '.git$', '.*\.egg.*$', '.tox', '.coverage.*']
 let NERDTreeShowHidden=1
 let g:nerdtree_tabs_open_on_gui_startup=0
 let g:nerdtree_tabs_open_on_new_tab=0
@@ -79,10 +79,14 @@ let g:session_autosave = 'no'
 nnoremap <leader>pdb oimport pdb; pdb.set_trace()<Esc>
 
 " Mapping Buffer Focus Movement Keys
-nnoremap <silent> <A-Right> <c-w>l
-nnoremap <silent> <A-Left> <c-w>h
-nnoremap <silent> <A-Up> <c-w>k
-nnoremap <silent> <A-Down> <c-w>j
+" nnoremap <silent> <A-Right> <c-w>l
+" nnoremap <silent> <A-Left> <c-w>h
+" nnoremap <silent> <A-Up> <c-w>k
+" nnoremap <silent> <A-Down> <c-w>j
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+map <C-H> <C-W>h
+map <C-L> <C-W>l
 
 let g:airline_powerline_fonts = 1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
