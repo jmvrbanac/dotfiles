@@ -12,6 +12,7 @@ st = status
 plog = log --pretty=format:\"%Cgreen %h %Creset| %Cblue%G?%Creset | %ar | %aN | %Cblue%s\"
 hist = log --graph --date=local --all --pretty=format:\"%x09%s %Cred%d%Creset%n %x09%Cred%h%Creset | %ad | %Cblue%aN%Creset %n\"
 delete-remote-branch = push --delete
+sync-fork = !git remote update && git checkout master && git merge upstream master && git push personal master
 
 [color "status"]
 added = yellow
