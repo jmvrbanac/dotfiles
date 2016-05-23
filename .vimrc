@@ -31,6 +31,7 @@ autocmd FileType Markdown setlocal spell spelllang=en_us
 autocmd FileType rst setlocal spell spelllang=en_us
 
 set guifont:Inconsolata\ for\ Powerline\ Medium\ 14
+syntax on
 
 " Hooking up vim clipboard into the system clipboard
 set clipboard=unnamedplus
