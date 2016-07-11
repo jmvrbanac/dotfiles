@@ -30,6 +30,9 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd FileType Markdown setlocal spell spelllang=en_us
 autocmd FileType rst setlocal spell spelllang=en_us
 
+" yaml indentation
+autocmd FileType yaml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+
 set guifont:Inconsolata\ for\ Powerline\ Medium\ 14
 syntax on
 
