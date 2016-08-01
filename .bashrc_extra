@@ -4,6 +4,9 @@ xset r rate 200 50
 alias remove-pyc='find . -name "*.pyc" -exec rm -rf {} \;'
 
 # Functions
+control-cpu() {
+    sudo python ~/Repositories/github/jmv-random-scripts/control_cpu.py $@
+}
 
 # Include Work bashrc
 # Load up work specific bashrc
