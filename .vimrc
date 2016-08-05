@@ -15,9 +15,10 @@ Plugin 'wting/rust.vim'
 Plugin 'bufexplorer.zip'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'sickill/vim-monokai'
+Plugin 'rhysd/vim-grammarous'
 
 Bundle 'scrooloose/nerdtree'
-Bundle 'kien/ctrlp.vim'
+Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-session'
@@ -35,6 +36,11 @@ autocmd FileType yaml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
 set guifont:Inconsolata\ for\ Powerline\ Medium\ 14
 syntax on
+
+" Put middlefingers for tabs
+set emoji
+set list
+set listchars=tab:🖕⋅,trail:⋅,nbsp:⋅
 
 " Hooking up vim clipboard into the system clipboard
 set clipboard=unnamedplus
@@ -81,6 +87,7 @@ let g:session_autosave = 'no'
 
 " Snippets
 nnoremap <leader>pdb oimport pdb; pdb.set_trace()<Esc>
+nnoremap <leader>ipdb oimport ipdb; ipdb.set_trace()<Esc>
 
 " Mapping Buffer Focus Movement Keys
 " nnoremap <silent> <A-Right> <c-w>l
