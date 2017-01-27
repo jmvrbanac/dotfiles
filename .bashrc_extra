@@ -8,6 +8,10 @@ control-cpu() {
     sudo python ~/Repositories/github/jmv-random-scripts/control_cpu.py $@
 }
 
+find-replace() {
+    ag -l $1 | xargs sed -ri.bak -e "s/$1/$2/g"
+}
+
 # Include Work bashrc
 # Load up work specific bashrc
 if [ -e ~/.bashrc_work ]; then

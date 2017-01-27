@@ -16,6 +16,13 @@ Plugin 'bufexplorer.zip'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'sickill/vim-monokai'
 Plugin 'rhysd/vim-grammarous'
+Plugin 'jamshedvesuna/vim-markdown-preview'
+Plugin 'ekalinin/dockerfile.vim'
+Plugin 'vimwiki/vimwiki'
+
+" Go plugins
+Plugin 'fatih/vim-go'
+Plugin 'Shougo/neocomplete.vim'
 
 Bundle 'scrooloose/nerdtree'
 Bundle 'ctrlpvim/ctrlp.vim'
@@ -31,6 +38,15 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd FileType Markdown setlocal spell spelllang=en_us
 autocmd FileType rst setlocal spell spelllang=en_us
 
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
+
+" Go Settings
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:go_fmt_command = "goimports"
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_auto_close_preview = 1
+" let g:acp_enableAtStartup = 0
+
 " yaml indentation
 autocmd FileType yaml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
@@ -40,7 +56,10 @@ syntax on
 " Put middlefingers for tabs
 set emoji
 set list
-set listchars=tab:🖕⋅,trail:⋅,nbsp:⋅
+" set listchars=tab:🖕⋅,trail:⋅,nbsp:⋅
+
+" Markdown Preview
+let vim_markdown_preview_github=1
 
 " Hooking up vim clipboard into the system clipboard
 set clipboard=unnamedplus
@@ -55,7 +74,7 @@ colorscheme monokai
 set laststatus=2
 set nowrap
 set scrolloff=5
-set lcs=tab:▸\ ,trail:·
+set lcs=tab:\|\ ,trail:·
 
 autocmd BufWritePre * :%s/\s\+$//e "remove trailing spaces on saves
 
@@ -85,6 +104,9 @@ let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 let g:session_autoload = 'no'
 let g:session_autosave = 'no'
 
+" VimWiki Settings
+let g:vimwiki_list = [{'path': '~/.vimwiki'}]
+
 " Snippets
 nnoremap <leader>pdb oimport pdb; pdb.set_trace()<Esc>
 nnoremap <leader>ipdb oimport ipdb; ipdb.set_trace()<Esc>
@@ -99,6 +121,12 @@ map <C-K> <C-W>k
 map <C-H> <C-W>h
 map <C-L> <C-W>l
 
+" Disable Arrow Keys
+" noremap <Up> <nop>
+" noremap <Down> <nop>
+" noremap <Left> <nop>
+" noremap <Right> <nop>
+
 let g:airline_powerline_fonts = 1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <C-n> :NERDTreeToggle<CR>
@@ -108,4 +136,24 @@ set wildignore+=*.pyc                            " Python byte code
 
 execute pathogen#infect()
 
+function! Convert4SpaceTo2Space()
+    " Pulled from Reaperhulk's vimrc
+    " Convert spaces to tabs first
+    set noexpandtab
+    set tabstop=4
+    set shiftwidth=4
+    retab!
+    " now you have tabs instead of spaces, so insert spaces according to
+    " your new preference
+    set tabstop=2
+    set shiftwidth=2
+    set expandtab
+    retab!
+endfunction
 
+function! ConvertTabsToSpaces()
+    set expandtab
+    set tabstop=4
+    set shiftwidth=4
+    retab!
+endfunction
