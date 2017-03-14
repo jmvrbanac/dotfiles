@@ -64,6 +64,9 @@ map <C-J> <C-W>j
 map <C-K> <C-W>k
 map <C-H> <C-W>h
 map <C-L> <C-W>l
+if has('macunix')
+    map <BS> <C-W>h
+endif
 
 " Syntastic Settings
 let g:syntastic_enable_signs=1
