@@ -13,7 +13,9 @@ plog = log --pretty=format:\"%Cgreen %h %Creset| %Cblue%G?%Creset | %ar | %aN | 
 hist = log --graph --date=local --all --pretty=format:\"%x09%s %Cred%d%Creset%n %x09%Cred%h%Creset | %ad | %Cblue%aN%Creset %n\"
 delete-remote-branch = push --delete
 delete-merged = !git branch --merged | grep -v \"\\*\" | grep -v master | xargs -n 1 git branch -d
-sync-fork = !git remote update && git checkout master && git merge upstream master && git push personal master
+sync-fork = !git ru && git checkout master && git merge upstream master && git push personal master
+add-personal-remote = !git remote add personal $(git config --get remote.upstream.url | sed -e 's!:\\(.*\\)/!:jmvrbanac/!')
+setup-upstream-w-personal = !git remote rename origin upstream && git add-personal-remote && git ru
 
 [color "status"]
 added = yellow
