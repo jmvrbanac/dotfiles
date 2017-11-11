@@ -19,6 +19,8 @@ Plugin 'rhysd/vim-grammarous'
 Plugin 'jamshedvesuna/vim-markdown-preview'
 Plugin 'ekalinin/dockerfile.vim'
 Plugin 'vimwiki/vimwiki'
+Plugin 'kylef/apiblueprint.vim'
+Plugin 'hashivim/vim-terraform'
 
 " Go plugins
 Plugin 'fatih/vim-go'
