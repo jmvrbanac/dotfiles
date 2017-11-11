@@ -11,6 +11,7 @@ Plug 'tpope/vim-commentary'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 Plug 'rust-lang/rust.vim'
+Plug 'hashivim/vim-terraform'
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'vim-airline/vim-airline'
@@ -38,6 +39,8 @@ set laststatus=2
 set nowrap
 set scrolloff=5
 set lcs=tab:\|\ ,trail:·
+set noscrollbind
+set nocursorbind
 
 " Vim Sessions
 let g:session_autoload = 'no'
@@ -57,8 +60,8 @@ let g:nerdtree_tabs_open_on_new_tab=0
 set wildmenu
 set wildignore+=*.pyc
 
-let g:indent_guides_exclude_filetypes = ['nerdtree']
-let g:indent_guides_enable_on_vim_startup = 0
+" let g:indent_guides_exclude_filetypes = ['nerdtree']
+" let g:indent_guides_enable_on_vim_startup = 0
 
 map <C-J> <C-W>j
 map <C-K> <C-W>k
@@ -78,3 +81,8 @@ let g:syntastic_style_warning_symbol="⚠"
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args=''
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+
+" Snippets
+nnoremap <leader>pdb oimport pdb; pdb.set_trace()<Esc>
+nnoremap <leader>ipdb oimport ipdb; ipdb.set_trace()<Esc>
+nnoremap <leader>pudb oimport pudb; pudb.set_trace()<Esc>
