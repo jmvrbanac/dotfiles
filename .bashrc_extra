@@ -2,6 +2,10 @@ xset r rate 200 50
 
 # Aliases
 alias remove-pyc='find . -name "*.pyc" -exec rm -rf {} \;'
+alias clean-tox-dirs='find ./ -type d -path "*/.tox" -exec rm -r {} +'
+alias simple-server='python3 -m http.server'
+alias ..="cd .."
+alias ...="cd ../.."
 
 # Functions
 control-cpu() {
@@ -15,5 +19,5 @@ find-replace() {
 # Include Work bashrc
 # Load up work specific bashrc
 if [ -e ~/.bashrc_work ]; then
-    . ~/.bashrc_work
+    . ~/.bashrc_work_extra
 fi
