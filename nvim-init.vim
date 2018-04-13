@@ -2,7 +2,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'scrooloose/syntastic'
-Plug 'bufexplorer.zip'
+Plug 'jlanzarotta/bufexplorer'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'sickill/vim-monokai'
 Plug 'airblade/vim-gitgutter'

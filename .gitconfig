@@ -2,6 +2,15 @@
 name = John Vrbanac
 email = john.vrbanac@linux.com
 
+[includeIf "gitdir:~/Repositories/github.com/RackSec/*"]
+  path = ~/.gitconfig-work
+
+[includeIf "gitdir:~/Repositories/github.com/racker/*"]
+  path = ~/.gitconfig-work
+
+[includeIf "gitdir:~/Repositories/github.com/rackerlabs/*"]
+  path = ~/.gitconfig-work
+
 [alias]
 dl = diff HEAD~1
 dsl = diff HEAD~1 --stat
@@ -47,3 +56,5 @@ keepBackup = false
 historybrowser = gitg
 [gitreview]
 username = john.vrbanac
+[cola]
+	spellcheck = true
