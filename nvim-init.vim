@@ -60,6 +60,9 @@ let g:nerdtree_tabs_open_on_new_tab=0
 set wildmenu
 set wildignore+=*.pyc
 
+" Custom filetype settings
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
 " let g:indent_guides_exclude_filetypes = ['nerdtree']
 " let g:indent_guides_enable_on_vim_startup = 0
 

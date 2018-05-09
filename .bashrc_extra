@@ -21,8 +21,18 @@ find-replace() {
     ag -l $1 | xargs sed -ri.bak -e "s/$1/$2/g"
 }
 
+clean-known-host() {
+    ssh-keygen -f "/home/john/.ssh/known_hosts" -R $1
+    ssh-keygen -f "/home/john/.ssh/known_hosts" -R `dig +short $1 A`
+}
+
 # Include Work bashrc
 # Load up work specific bashrc
 if [ -e ~/.bashrc_work_extra ]; then
     . ~/.bashrc_work_extra
+fi
+
+# Include private extra
+if [ -e ~/.bashrc_private_extra ]; then
+    . ~/.bashrc_private_extra
 fi
