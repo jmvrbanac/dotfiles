@@ -1,5 +1,5 @@
 # Set a reasonable key repeat rate
-xset r rate 200 50
+# xset r rate 200 50
 
 # Add local bin path
 export PATH="~/.local/bin:$PATH"

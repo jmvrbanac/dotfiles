@@ -2,13 +2,7 @@
 name = John Vrbanac
 email = john.vrbanac@linux.com
 
-[includeIf "gitdir:~/Repositories/github.com/RackSec/*"]
-  path = ~/.gitconfig-work
-
-[includeIf "gitdir:~/Repositories/github.com/racker/*"]
-  path = ~/.gitconfig-work
-
-[includeIf "gitdir:~/Repositories/github.com/rackerlabs/*"]
+[includeIf "gitdir:~/Repositories/github.com/liquidweb/*"]
   path = ~/.gitconfig-work
 
 [alias]

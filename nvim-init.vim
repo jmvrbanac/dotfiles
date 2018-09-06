@@ -20,6 +20,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'hashivim/vim-terraform'
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'powerline/powerline-fonts'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
