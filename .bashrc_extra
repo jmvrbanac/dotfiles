@@ -12,6 +12,9 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias diff-cover-master='diff-cover --compare-branch master coverage.xml'
 
+# Workaround for when gnome-keyring agent has problems
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/keyring/ssh"
+
 # Functions
 control-cpu() {
     sudo python ~/Repositories/github/jmv-random-scripts/control_cpu.py $@
