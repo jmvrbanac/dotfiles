@@ -3,6 +3,7 @@
 
 # Add local bin path
 export PATH="~/.local/bin:$PATH"
+export EDITOR=vim
 
 # Aliases
 alias remove-pyc='find . -name "*.pyc" -exec rm -rf {} \;'
