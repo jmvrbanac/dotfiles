@@ -30,6 +30,13 @@ clean-known-host() {
     ssh-keygen -f "/home/john/.ssh/known_hosts" -R `dig +short $1 A`
 }
 
+view-swagger() {
+    docker run -it --rm -p 80:80 \
+        -v $1:/usr/share/nginx/html/spec.yaml \
+        -e SPEC_URL=spec.yaml \
+        redocly/redoc
+}
+
 # Include Work bashrc
 # Load up work specific bashrc
 if [ -e ~/.bashrc_work_extra ]; then
