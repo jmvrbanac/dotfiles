@@ -48,6 +48,7 @@ set scrolloff=5
 set lcs=tab:\|\ ,trail:·
 set noscrollbind
 set nocursorbind
+set cursorcolumn
 
 " Vim Sessions
 let g:session_autoload = 'no'
